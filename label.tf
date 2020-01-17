@@ -1,7 +1,5 @@
-# label.tf
-
-### frigga naming rule
+# frigga naming rule
 locals {
-  name            = "${join("-", compact(list(var.name, "managed", var.detail)))}"
-  credential_json = "${join("-", list(local.name, "credential.json"))}"
+  name            = join("-", compact(["spinnaker", "managed", var.desc]))
+  credential_json = join("-", [local.name, "credential.json"])
 }

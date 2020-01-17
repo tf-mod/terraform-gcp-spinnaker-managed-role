@@ -1,13 +1,15 @@
-# outputs.tf
 
 output "name" {
-  value = "${google_service_account.spinnaker-managed.name}"
+  description = "The service account name of spinnaker managed role"
+  value       = google_service_account.spinnaker-managed.name
 }
 
 output "email" {
-  value = "${google_service_account.spinnaker-managed.email}"
+  description = "The service account email address of spinnaker managed role"
+  value       = google_service_account.spinnaker-managed.email
 }
 
 output "id" {
-  value = "${google_service_account.spinnaker-managed.unique_id}"
+  description = "The service account resource identity of spinnaker managed role"
+  value       = google_service_account.spinnaker-managed.unique_id
 }
